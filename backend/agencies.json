@@ -1,0 +1,43 @@
+[
+  {
+    "source_key": "cmrl",
+    "agency": "Chennai Metro Rail Limited",
+    "operator_type": "Government",
+    "base_url": "https://chennaimetrorail.org/wp-json/wp/v2/road-diversion",
+    "timezone": "Asia/Kolkata",
+    "refresh_seconds": 3600,
+    "enabled": 1,
+    "label": "CMRL road diversions"
+  },
+  {
+    "source_key": "cmrl_press",
+    "agency": "Chennai Metro Rail Limited",
+    "operator_type": "Government",
+    "base_url": "https://chennaimetrorail.org/press-release/",
+    "timezone": "Asia/Kolkata",
+    "refresh_seconds": 3600,
+    "enabled": 1,
+    "label": "CMRL press releases"
+  },
+  {
+    "source_key": "sample_metro",
+    "agency": "Sample Chennai Transit (demo agency)",
+    "operator_type": "Government",
+    "base_url": "http://127.0.0.1:5000/demo-source/metro",
+    "timezone": "Asia/Kolkata",
+    "refresh_seconds": 60,
+    "enabled": 1,
+    "label": "Sample Chennai Transit (demo agency)"
+  },
+  {
+    "source_key": "demo_private_bus",
+    "agency": "Sample Private Coaches (demo operator)",
+    "operator_type": "Private",
+    "base_url": "http://127.0.0.1:5000/demo-source/private_coaches.xml",
+    "timezone": "Asia/Kolkata",
+    "refresh_seconds": 60,
+    "enabled": 1,
+    "label": "Sample Private Coaches (demo operator)"
+  }
+]
+

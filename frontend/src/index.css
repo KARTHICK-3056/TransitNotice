@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/*
+ * Obsidian Scholar Design System
+ * Scholarly, focused, prestigious minimalism with tonal layering.
+ * Palette: #141313 background, #1c1b1b surfaces, #444748 outline-variant, #e5e2e1 on-surface.
+ * Typography: Noto Serif for headlines, Manrope for narrative and controls.
+ */
+
+:root {
+  color-scheme: dark;
+  --bg-base: #07080b;
+  --bg-surface-low: #0c0d12;
+  --bg-surface-mid: #141620;
+  --bg-surface-high: #1c1e2b;
+  --border-outline: rgba(255, 255, 255, 0.2);
+  --border-outline-variant: rgba(255, 255, 255, 0.09);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #353434;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-outline);
+}
+
+/* Base input / select styling adhering to Obsidian Scholar */
+select, input[type="text"], input[type="email"], input[type="date"], textarea {
+  background-color: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-outline-variant) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  font-size: 13px !important;
+  font-family: 'Manrope', sans-serif !important;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea:focus {
+  border-color: var(--accent-white) !important;
+  box-shadow: 0 0 0 1px var(--accent-white);
+}
+
+button {
+  font-family: 'Manrope', sans-serif;
+  cursor: pointer;
+}
+
+/* Editorial Serif Headings */
+h1, h2, h3, .font-serif-heading {
+  font-family: 'Noto Serif', serif;
+  letter-spacing: -0.015em;
+}
+
+/* Section Kicker Labels */
+.kicker-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+/* Obsidian Scholar Container */
+.scholar-container {
+  background-color: var(--bg-surface-low);
+  border: 1px solid var(--border-outline-variant);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Obsidian Scholar Notice Card */
+.scholar-card {
+  background-color: var(--bg-surface-low);
+  border: 1px solid var(--border-outline-variant);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scholar-card:hover {
+  background-color: var(--bg-surface-mid);
+  border-color: var(--border-outline);
+  transform: translateY(-1px);
+}
+
+/* Serif Card Title */
+.scholar-card-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--accent-white);
+  line-height: 1.35;
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.scholar-card-title:hover {
+  color: var(--text-secondary);
+}
+
+/* Capsule Pill Badges */
+.scholar-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--bg-base);
+  border: 1px solid var(--border-outline-variant);
+  color: var(--text-secondary);
+}
+
+.scholar-pill-active {
+  background-color: rgba(52, 211, 153, 0.08);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: #34d399;
+}
+
+.scholar-pill-ended {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-outline-variant);
+  color: var(--text-muted);
+}
+
+.scholar-pill-upcoming {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-outline-variant);
+  color: var(--text-secondary);
+}
+
+/* Glowing Indicator Dot */
+.scholar-dot-active {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #34d399;
+  box-shadow: 0 0 6px rgba(52, 211, 153, 0.8);
+}
+
+.scholar-dot-muted {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+/* Primary Button (White pill, black text) */
+.btn-scholar-primary {
+  background-color: var(--accent-white);
+  color: var(--bg-base);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-scholar-primary:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-1px);
+}
+
+/* Ghost / Secondary Button */
+.btn-scholar-secondary {
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-outline-variant);
+  transition: all 0.2s ease;
+}
+
+.btn-scholar-secondary:hover {
+  color: var(--accent-white);
+  border-color: var(--border-outline);
+}
